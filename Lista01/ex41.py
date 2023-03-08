@@ -4,8 +4,8 @@ horas trabalhadas no mês. Imprima o valor a ser pago ao funcionário, adicionan
 10% sobre o valor calculado.
 """
 
-valor_hora = float(input('Digite o valor da hora de trabalho: '))
-horas_trabalhadas = float(input('Digite o número de horas trabalhadas no mês: '))
+valor_hora = float(input('Informe o valor da hora de trabalho: '))
+horas_trabalhadas = float(input('Informe o número de horas trabalhadas no mês: '))
 
 valor = valor_hora * horas_trabalhadas
 acrescimo = valor * 0.1
