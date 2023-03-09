@@ -20,4 +20,4 @@ comissao_vista = novo_valor * 0.05
 comissao_parcelada = valor_total * 0.05
 
 print('Comissão do vendedor à vista: R$ {:.2f}'.format(comissao_vista))
-print('Comissão do vendedor (parcelada): R$ {:.2f}'.format(comissao_parcelada))
+print('Comissão do vendedor parcelada: R$ {:.2f}'.format(comissao_parcelada))
