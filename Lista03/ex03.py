@@ -9,7 +9,7 @@ maior_num = None # armazenar o maior número
 cont_maior = 0 # contar quantas vezes o maior número foi lido
 
 for i in range(qtt_num):
-	num = float(input(f"Digite o {i+1}º: "))
+	num = float(input(f'Digite o {i+1}º: '))
 
 	if maior_num is None or num > maior_num: # se o número digitado for maior que o último maior, então 'maior_num = num' e cont recebe 1.
 		maior_num = num
@@ -17,4 +17,4 @@ for i in range(qtt_num):
 	elif num == maior_num:
 		cont_maior += 1
 
-print(f"O maior número lido foi {maior_num}, que foi lido {cont_maior} vezes.")
+print(f'O maior número lido foi {maior_num}, que foi lido {cont_maior} vezes.')
