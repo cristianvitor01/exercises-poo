@@ -13,4 +13,4 @@ if num >= 100 and num <= 999:
 	print(f'Dezenas: {dezenas}')
 	print(f'Unidades: {unidades}')
 else:
-	print('Número inválido. Por favor, digite um número entre 100 e 999.')
+	print('Número inválido!')
