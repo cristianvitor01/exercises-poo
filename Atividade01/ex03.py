@@ -5,8 +5,8 @@
 notas = list()
 
 for i in range(4):
-    notas.append(input('Informe uma nota: '))
+    notas.append(int(input('Informe uma nota: ')))
+    media = sum(notas)/4
 
-print(notas)
-
-media = []
+print(f'Notas: {notas}')
+print(f'Media: {media}')
