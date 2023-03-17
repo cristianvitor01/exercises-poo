@@ -2,7 +2,9 @@
 1-Faça um Programa que receba uma lista de 5 números inteiros e mostre-os.
 """
 
-lista = list(input('Informe um número: '))
+lista = list()
 
-for num in lista:
-    print(num)
+for i in range(5):
+    lista.append(input('Informe um número: '))
+
+print(lista)
