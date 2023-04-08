@@ -17,15 +17,18 @@ funcionarios = [
 
 
 def PesquisarFunc(cpf):
+    encontrado = False
     for f in funcionarios:
         if f['cpf'] == cpf:
             for k, v in f.items():
                 print(k, v)
-        else:
-            print('Funcionario não encontrado.')
+            encontrado = True
+            break
+    if not encontrado:
+        print('Funcionário não encontrado.')
 
 
 
-cpf = input('Informe um cpf: ')
+cpf = int(input('Informe um CPF: '))
 PesquisarFunc(cpf)
 
