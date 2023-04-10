@@ -46,11 +46,22 @@ def addTel(cpf, telefone):
         print()
 
 
-cpf = input('Informe um CPF: ')
-PesquisarFunc(cpf)
-        
-cpf = input('Informe um CPF: ')
-telefone = int(input('Informe um telefone para adicionar: '))
-addTel(cpf, telefone)
+def editaFunc():
+    """Encontra Funcionário e edita os dados"""
+    pass
 
-print(funcionarios)
+def delFunc():
+    """Deleta Funcionário através do CPF."""
+    pass
+
+
+
+"""Testes"""
+# cpf = input('Informe um CPF: ')
+# PesquisarFunc(cpf)
+        
+# cpf = input('Informe um CPF: ')
+# telefone = int(input('Informe um telefone para adicionar: '))
+# addTel(cpf, telefone)
+
+# print(funcionarios)
