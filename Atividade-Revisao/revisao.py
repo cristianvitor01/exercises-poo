@@ -46,9 +46,20 @@ def addTel(cpf, telefone):
         print()
 
 
-def editaFunc():
-    """Encontra Funcionário e edita os dados"""
-    pass
+def editaFunc(cpf, **kwargs):
+    """Encontra Funcionário e edita os dados."""
+    encontrado = False
+    for f in funcionarios:
+        if f['cpf'] == cpf:
+            for k, v in kwargs.items():
+                # Editar os dados
+                f[k] = v
+            encontrado = True
+            break
+    if encontrado:
+        print('Funcionário editado com sucesso.')
+    else:
+        print('Funcionário não encontrado.')
 
 def delFunc():
     """Deleta Funcionário através do CPF."""
@@ -57,6 +68,15 @@ def delFunc():
 
 
 """Testes"""
+cpf = input('Informe um CPF: ')
+PesquisarFunc(cpf)
+
+cargo = input('Informe o novo cargo para o funcionário: ')
+salario = float(input('Informe o novo salário para o funcionário: '))
+editaFunc(cpf, cargo=cargo, salario=salario)
+
+print(funcionarios)
+
 # cpf = input('Informe um CPF: ')
 # PesquisarFunc(cpf)
         
