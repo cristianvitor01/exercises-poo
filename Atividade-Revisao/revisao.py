@@ -61,19 +61,31 @@ def editaFunc(cpf, **kwargs):
     else:
         print('Funcionário não encontrado.')
 
-def delFunc():
+def delFunc(cpf):
     """Deleta Funcionário através do CPF."""
-    pass
+    encontrado = False
+    for f in funcionarios:
+        if f['cpf'] == cpf:
+                # deleta funcionário
+                funcionarios.remove(f)
+                encontrado = True
+                break
+    if encontrado:
+        print('Funcionário deletado com sucesso.')
+    else:
+        print('Funcionário não encontrado.')
 
 
 
 """Testes"""
-cpf = input('Informe um CPF: ')
+cpf = input('Informe um CPF para deletar: ')
 PesquisarFunc(cpf)
 
-cargo = input('Informe o novo cargo para o funcionário: ')
-salario = float(input('Informe o novo salário para o funcionário: '))
-editaFunc(cpf, cargo=cargo, salario=salario)
+delFunc(cpf)
+
+# cargo = input('Informe o novo cargo para o funcionário: ')
+# salario = float(input('Informe o novo salário para o funcionário: '))
+# editaFunc(cpf, cargo=cargo, salario=salario)
 
 print(funcionarios)
 
