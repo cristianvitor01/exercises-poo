@@ -43,7 +43,7 @@ def addTel(cpf, telefone):
     """Encontra funcionário e adiciona um novo telefone."""
     encontrado = False
     for f in funcionarios:
-        if f['cpf'] == cpf:
+        if f['cpf'] == cpf: 
             #  adicionar um novo telefone
             f['telefones'].append(telefone)
             encontrado = True
@@ -51,6 +51,7 @@ def addTel(cpf, telefone):
     if encontrado:
         print('Novo telefone adicionado com sucesso.')
         print()
+        [print(funcionario) for funcionario in funcionarios]
     else:
         print('Funcionário não encontrado.')
         print()
@@ -68,6 +69,8 @@ def editaFunc(cpf, **kwargs):
             break
     if encontrado:
         print('Funcionário editado com sucesso.')
+        print()
+        [print(funcionario) for funcionario in funcionarios]
     else:
         print('Funcionário não encontrado.')
 
@@ -82,6 +85,8 @@ def delFunc(cpf):
                 break
     if encontrado:
         print('Funcionário deletado com sucesso.')
+        print()
+        [print(funcionario) for funcionario in funcionarios]
     else:
         print('Funcionário não encontrado.')
 
@@ -95,6 +100,18 @@ opc = int(input('Escolha uma opção acima: '))
 while opc != 0:
     if opc == 1:
         print('Cadastro de novo funcionário.')
+        nome = input('Nome do funcionário: ')
+        cpf = input('CPF: ')
+        cargo = input('Cargo: ')
+        salario = float(input('Salário: '))
+        quantidade_tel = int(input('Quantidade de telefone a serem adicionados: '))
+        for i in range(quantidade_tel):
+            telefone = float(input(f'Telefone: {i}'))
+            for f in funcionarios:
+                f['telefones'].append(telefone)
+        print('Funcionário cadastrado com sucesso.!!!!!!!!!!!!!!')
+
+        [print(funcionario) for funcionario in funcionarios]
         break
     elif opc == 2:
         print('Pesquisar Funcionário.')
