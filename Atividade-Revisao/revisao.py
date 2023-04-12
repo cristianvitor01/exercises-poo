@@ -9,14 +9,14 @@ funcionarios = [
     {
         "nome": "cristian",
         "cpf": "111111",
-        "cargo": "devpleno",
+        "cargo": "cargo-teste1",
         "salario": 8000,
         "telefones": [159159, 148148, 126126],
     },
     {
         "nome": "func2",
         "cpf": "22222",
-        "cargo": "func",
+        "cargo": "cargo-teste2",
         "salario": 1000,
         "telefones": [11111, 22222, 22222],
     }
@@ -28,6 +28,9 @@ def PesquisarFunc(cpf):
     encontrado = False
     for f in funcionarios:
         if f['cpf'] == cpf:
+            print()
+            print('Funcionário encontrado: ')
+            print()
             for k, v in f.items():
                 print(k, v)
             encontrado = True
@@ -83,6 +86,9 @@ def delFunc(cpf):
         print('Funcionário não encontrado.')
 
 
+print('Funcionários Cadastrados: ')
+[print(funcionario) for funcionario in funcionarios]
+
 menu()
 opc = int(input('Escolha uma opção acima: '))
 
@@ -92,9 +98,14 @@ while opc != 0:
         break
     elif opc == 2:
         print('Pesquisar Funcionário.')
+        cpf = input('Informe um CPF: ')
+        PesquisarFunc(cpf)
         break
     elif opc == 3:
         print('Cadastar novo telefone.')
+        cpf = input('Informe um CPF: ')
+        telefone = int(input('Informe um telefone para adicionar: '))
+        addTel(cpf, telefone)
         break
     elif opc == 4:
         print('Editar dados do funcionário.')
