@@ -1,3 +1,10 @@
+def menu():
+    print("[1] Cadastrar novo funcionário")
+    print("[2] Pesquisar Funcionário")
+    print("[3] Cadastar novo telefone")
+    print('[4] Editar dados do funcionário')
+    print("[0] Sair.")
+
 funcionarios = [
     {
         "nome": "cristian",
@@ -76,18 +83,37 @@ def delFunc(cpf):
         print('Funcionário não encontrado.')
 
 
+menu()
+opc = int(input('Escolha uma opção acima: '))
+
+while opc != 0:
+    if opc == 1:
+        print('Cadastro de novo funcionário.')
+        break
+    elif opc == 2:
+        print('Pesquisar Funcionário.')
+        break
+    elif opc == 3:
+        print('Cadastar novo telefone.')
+        break
+    elif opc == 4:
+        print('Editar dados do funcionário.')
+        break
+    else:
+        print('Opção inválida!')
+        break
 
 """Testes"""
-cpf = input('Informe um CPF para deletar: ')
-PesquisarFunc(cpf)
+# cpf = input('Informe um CPF para deletar: ')
+# PesquisarFunc(cpf)
 
-delFunc(cpf)
+# delFunc(cpf)
 
 # cargo = input('Informe o novo cargo para o funcionário: ')
 # salario = float(input('Informe o novo salário para o funcionário: '))
 # editaFunc(cpf, cargo=cargo, salario=salario)
 
-print(funcionarios)
+# print(funcionarios)
 
 # cpf = input('Informe um CPF: ')
 # PesquisarFunc(cpf)
