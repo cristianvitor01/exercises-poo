@@ -1,10 +1,3 @@
-def menu():
-    print("[1] Cadastrar novo funcionário")
-    print("[2] Pesquisar Funcionário")
-    print("[3] Cadastar novo telefone")
-    print('[4] Editar dados do funcionário')
-    print("[0] Sair.")
-
 funcionarios = [
     {
         "nome": "cristian",
@@ -22,6 +15,23 @@ funcionarios = [
     }
 ]
 
+def cadastrarFuncionario():
+    print('Adicionar um novo funcionário no sistema.')
+    print()
+    nome = input('Nome: ')
+    cpf = input('CPF: ')
+    cargo = input('Cargo: ')
+    salario = float(input('Salário: '))
+    telefones = []
+    while True:
+        telefone = input('Telefone (ou ENTER para sair): ')
+        if telefone == "":
+            break
+        telefones.append(telefone)
+
+    funcionario = {"nome": nome, "cpf": cpf, "cargo": cargo, "salario": salario, "telefones": telefones}
+    funcionarios.append(funcionario)
+    print("Funcionario cadastrado com sucesso!")
 
 def PesquisarFunc(cpf):
     """Função que pesquisa funcionário pelo seu cpf e exibe na tela seus dados."""
@@ -94,23 +104,19 @@ def delFunc(cpf):
 print('Funcionários Cadastrados: ')
 [print(funcionario) for funcionario in funcionarios]
 
+def menu():
+    print("[1] Cadastrar novo funcionário")
+    print("[2] Pesquisar Funcionário")
+    print("[3] Cadastar novo telefone")
+    print('[4] Editar dados do funcionário')
+    print("[0] Sair.")
+
 menu()
 opc = int(input('Escolha uma opção acima: '))
 
 while opc != 0:
     if opc == 1:
-        print('Cadastro de novo funcionário.')
-        nome = input('Nome do funcionário: ')
-        cpf = input('CPF: ')
-        cargo = input('Cargo: ')
-        salario = float(input('Salário: '))
-        quantidade_tel = int(input('Quantidade de telefone a serem adicionados: '))
-        for i in range(quantidade_tel):
-            telefone = float(input(f'Telefone: {i}'))
-            for f in funcionarios:
-                f['telefones'].append(telefone)
-        print('Funcionário cadastrado com sucesso.!!!!!!!!!!!!!!')
-
+        cadastrarFuncionario()
         [print(funcionario) for funcionario in funcionarios]
         break
     elif opc == 2:
@@ -131,23 +137,3 @@ while opc != 0:
         print('Opção inválida!')
         break
 
-"""Testes"""
-# cpf = input('Informe um CPF para deletar: ')
-# PesquisarFunc(cpf)
-
-# delFunc(cpf)
-
-# cargo = input('Informe o novo cargo para o funcionário: ')
-# salario = float(input('Informe o novo salário para o funcionário: '))
-# editaFunc(cpf, cargo=cargo, salario=salario)
-
-# print(funcionarios)
-
-# cpf = input('Informe um CPF: ')
-# PesquisarFunc(cpf)
-        
-# cpf = input('Informe um CPF: ')
-# telefone = int(input('Informe um telefone para adicionar: '))
-# addTel(cpf, telefone)
-
-# print(funcionarios)
